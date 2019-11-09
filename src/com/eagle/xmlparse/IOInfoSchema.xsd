@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="oDate">
+		<xs:annotation>
+			<xs:documentation>时间</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="oResume">
+		<xs:annotation>
+			<xs:documentation>备注</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="oType">
+		<xs:annotation>
+			<xs:documentation>支出类型</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="oMoney">
+		<xs:annotation>
+			<xs:documentation>支出金额</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="oName">
+		<xs:annotation>
+			<xs:documentation>支出名称</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="oId">
+		<xs:annotation>
+			<xs:documentation>支出编号</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="iDate">
+		<xs:annotation>
+			<xs:documentation>时间</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="iResume">
+		<xs:annotation>
+			<xs:documentation>备注</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="iType">
+		<xs:annotation>
+			<xs:documentation>收入类型</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="iCleanMoney">
+		<xs:annotation>
+			<xs:documentation>纯收入额</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="iAllMoney">
+		<xs:annotation>
+			<xs:documentation>收入总额</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="iName">
+		<xs:annotation>
+			<xs:documentation>收入名称</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="iId">
+		<xs:annotation>
+			<xs:documentation>收入编号</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="out">
+		<xs:annotation>
+			<xs:documentation>一次支出</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="oId"/>
+				<xs:element ref="oName"/>
+				<xs:element ref="oMoney"/>
+				<xs:element ref="oType"/>
+				<xs:element ref="oResume"/>
+				<xs:element ref="oDate"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="outs">
+		<xs:annotation>
+			<xs:documentation>支出数据</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="out"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="in">
+		<xs:annotation>
+			<xs:documentation>一次收入</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="iId"/>
+				<xs:element ref="iName"/>
+				<xs:element ref="iAllMoney"/>
+				<xs:element ref="iCleanMoney"/>
+				<xs:element ref="iType"/>
+				<xs:element ref="iResume"/>
+				<xs:element ref="iDate"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ins">
+		<xs:annotation>
+			<xs:documentation>收入数据</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="in"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="IOInfo">
+		<xs:annotation>
+			<xs:documentation>收入支出数据</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ins" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="outs" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
